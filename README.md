@@ -1,59 +1,133 @@
-# BlogApp
+# Blog Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+A modern blog application built with Angular that supports social authentication, post management, and real-time updates.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- 🔐 Social Authentication (Google & Facebook)
+- 📝 Create, Read, Update, Delete (CRUD) operations for blog posts
+- 🎨 Modern and responsive UI
+- 🔒 Protected routes with Auth Guard
+- 🔄 Auto token refresh mechanism
+- 📱 Mobile-friendly design
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js (v16 or higher)
+- npm (v8 or higher)
+- Angular CLI (v17 or higher)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/blog-application.git
+cd blog-application
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Configure environment variables:
+   - Copy `src/environments/environment.example.ts` to `src/environments/environment.ts`
+   - Update the `apiUrl` and other configuration values as needed
+
+## Development Server
+
+Run the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── components/           # Application components
+│   │   ├── auth-callback/    # OAuth callback handling
+│   │   ├── dashboard/        # Main dashboard view
+│   │   ├── login/           # Login component
+│   │   ├── post-detail/     # Post viewing component
+│   │   ├── post-list/       # Post listing component
+│   │   └── create-post/     # Post creation component
+│   ├── core/                # Core functionality
+│   │   ├── guards/          # Route guards
+│   │   ├── interfaces/      # TypeScript interfaces
+│   │   ├── services/        # Application services
+│   │   └── interceptors/    # HTTP interceptors
+│   └── environments/        # Environment configurations
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Features in Detail
 
-```bash
-ng generate --help
-```
+### Authentication
+- Social login support (Google, Facebook)
+- JWT-based authentication
+- Automatic token refresh
+- Protected routes with Auth Guard
 
-## Building
+### Post Management
+- Create new blog posts
+- View post details
+- Edit existing posts
+- Delete posts
+- List view of all posts
 
-To build the project run:
+### Security Features
+- JWT Interceptor for authenticated requests
+- Secure route protection
+- Token refresh mechanism
+- XSS protection
+
+## Building for Production
+
+To build the project for production:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Running Tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Execute unit tests via Karma:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Run end-to-end tests:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Contributing
 
-## Additional Resources
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Dependencies
+
+- @angular/core
+- @angular/common
+- @angular/router
+- @angular/forms
+- @angular/platform-browser
+- @angular/animations
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
